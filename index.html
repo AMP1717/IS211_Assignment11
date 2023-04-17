@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TO DO list</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>To Do:</h1>
+    {% if tasks %}
+    <table>
+        <tr>
+            <th style="width:50%">Description</th>
+            <th style="width:35%">Responsible Person</th>
+            <th style="width:15%">Priority</th>
+        </tr>
+        {% for task in tasks %}
+        <tr>
+            <td>{{ task['description'] }}</td>
+            <td>{{ task['email'] }}</td>
+            <td>{{ task['priority'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+        <p>No tasks added yet.</p>
+    {% endif %}
+
+
+    <h1>Add To Do</h1>
+    <form method="POST" action="/submit">
+
+        <label for="description">Description:</label><br>
+        <input type="text" name="description" id="description" class="input" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" name="email" id="email" class="input" required><br><br>
+
+        <label for="priority">Priority:</label><br>
+        <select name="priority" id="priority" class="input">
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+        </select><br><br>
+
+        <input type="submit" value="Add To Do item" class="input" id="button">
+    </form>
+    <br>
+    <form method="POST" action="/clear">
+        <input type="submit" value="Clear all To Do items" class="input" id="button">
+    </form>
+</body>
+</html>

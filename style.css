@@ -1,0 +1,57 @@
+/* basic css so that webpage looks a bit better*/
+
+body{
+    max-width: 80%;
+    margin: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+label{
+    font-size: larger;
+}
+
+th{
+    background-color: blue;
+    color: white;
+    padding: 10px;
+}
+
+tr:nth-child(odd){
+    background-color: lightblue;
+}
+
+tr:nth-child(even){
+    background-color: lightskyblue;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0 15px;
+}
+
+td { 
+    text-align: center;
+    vertical-align: middle;
+    padding: 5px 0px;
+}
+
+.input{
+    padding: 10px;
+}
+
+#description{
+    width: 70%;
+}
+
+#email{
+    width: 30%;
+}
+
+#button{
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
